@@ -1,7 +1,6 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
 <body>
     <!-- Fixed masthead -->
     <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
@@ -30,11 +28,11 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'profile' %}">Profile</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out</a></li>
-                    {% else %}
-                    <li><a href="{% url 'register' %}">Register</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
+                        <li><a href="{% url 'profile' %}">Profile</a></li>
+                        <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {%  else %}
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                        <li><a href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
                     <li>
                         <a href="{% url 'view_cart' %}">
@@ -49,13 +47,15 @@
         </div>
     </nav>
     {% if messages %}
-    <div class="alert alert-success">
-        <div class="messages">
-            {% for message in messages %} {{ message }} {% endfor %}
+        <div class="alert alert-success">
+            <div class="messages">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
         </div>
-    </div>
     {% endif %}
-    <div class="container">
+    <div class="container search-bar">
         <div class="display">
             <form action="{% url 'search' %}" method="get">
                 <input type="text" name="q">
@@ -70,5 +70,4 @@
         </div>
     </footer>
 </body>
-
 </html>
