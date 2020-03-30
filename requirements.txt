@@ -27,7 +27,7 @@ dateparser==0.7.2
 decorator==4.4.2
 distro-info===0.18ubuntu0.18.04.1
 dj-database-url==0.5.0
-Django==1.11
+Django==1.11.28
 django-forms-bootstrap==3.1.0
 docker==4.2.0
 docutils==0.15.2
