@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% block head_js %}
+    {% endblock head_js %}
 </head>
 <body>
     <!-- Fixed masthead -->
@@ -55,7 +57,7 @@
             </div>
         </div>
     {% endif %}
-    <div class="container search-bar">
+    <div class="container">
         <div class="display">
             <form action="{% url 'search' %}" method="get">
                 <input type="text" name="q">
